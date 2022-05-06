@@ -1,0 +1,8 @@
+# ignore these files
+
+pecube
+.sconsign.dblite
+version.f90
+
+*.o
+*.mod

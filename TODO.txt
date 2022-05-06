@@ -1,0 +1,7 @@
+- Remove unused functions, variables, code, ...
+- More code clean up / refactoring
+- Write unit tests ?
+- Rewrite reading of input file Pecube.in (create_pecube_in.f90 -> read_config_file.f90)
+- Add more data structures
+- Get rid of Mad_He.f90 and Mad_Trax.f90. Move it to age_algorithms.f90
+

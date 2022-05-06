@@ -1,0 +1,72 @@
+Pecube output files:
+
+Temps_tec*.dat (text)
+
+erates_tec*.dat (text)
+
+
+<4> means 4 bytes, integer
+<8> means 8 bytes floating point number
+
+
+temperature_field_sub*.bin (binary)
+
+ntime<4>: time step
+j<4>: start_step, 1, -1 # istep # start_step from file name
+dt_sub<8>: delta t time step
+k<4>: 1, ntime
+{
+    time_history_value<8>: time
+    l<4>: 1, model_points
+    {
+        tx<8>: x pos
+        ty<8>: y pos
+        tz<8>: z pos
+        t_in<8>: temperature
+    }
+}
+
+
+
+
+time_temperature_history_*.bin (binary)
+
+number_of_points_in_file<4>
+i<4>: outer_step, 1, -1 # from file name
+ntime<4>: time step
+j<4>: 1, ntime
+{
+    ztime_local<8>
+}
+
+sub_step = 1, ntime
+{
+    j<4>: 1, number_of_points_in_file
+    {
+        ztemp_local<8>
+        vi_pos%x<8>
+        vi_pos%y<8>
+        vi_pos%z<8>
+        vi_velo%x<8>
+        vi_velo%y<8>
+        vi_velo%z<8>
+    }
+}
+
+
+
+velocity_info*.bin (binary)
+j: start_step
+k: moving_points
+j: current_step = start_step, 1, -1
+{
+    k: 1, moving_points
+    {
+        point_pos%x
+        point_pos%y
+        point_pos%z
+        point_velo%x
+        point_velo%y
+        point_velo%z
+    }
+}

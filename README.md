@@ -1,2 +1,3 @@
 # Pecube_D
-Pecube_D (University of Tuebingen, ESD workgroup Ehlers)
+This version of Pecube is developed at the University of Tuebingen, department of Geoscienses, ESD workgroup Ehlers.
+

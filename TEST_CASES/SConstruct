@@ -1,0 +1,20 @@
+import os
+
+env = Environment(ENV = os.environ, F90PATH = ".")
+
+env.Append(F90FLAGS = "-Werror -Wall -Warray-bounds -Wunderflow -ffree-line-length-none")
+
+sources = [
+    "../calculate_misfit.f90",
+    "../logger.f90",
+    "../pecube_config.f90",
+    "../move_velocities.f90",
+    "../age_algorithms.f90",
+    "util.f90",
+    "test_calculate_misfit.f90",
+    "test_create_velocities.f90",
+    "test_ages.f90",
+    "all_test_cases.f90"
+    ]
+
+objs = env.Program("test_pecube", sources)
